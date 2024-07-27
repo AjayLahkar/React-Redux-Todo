@@ -7,8 +7,8 @@ export default function Todo() {
     console.log(todos);
     const dispatch = useDispatch();
 
-    const clickHandler = (id) => {
-        console.log("MarkAsDone", id);
+    const MarkAsDoneHandler = (id) => {
+        // console.log("MarkAsDone", id);
         dispatch(markAsDone(id));
     };
 
@@ -22,9 +22,9 @@ export default function Todo() {
                         <span 
                             style={todo.isDone ? {textDecorationLine : "line-through"} : {}}>
                             {todo.task}
-                        </span> 
-                           &nbsp; &nbsp; IsDone : {todo.isDone.toString()}
-                           &nbsp; &nbsp; ID : {todo.id}
+                        </span>
+                           {/* &nbsp; &nbsp; IsDone : {todo.isDone.toString()}
+                           &nbsp; &nbsp; ID : {todo.id} */}
 
                         &nbsp; &nbsp; 
 
@@ -36,7 +36,7 @@ export default function Todo() {
                         &nbsp; &nbsp;
 
                         <button 
-                            onClick={() => clickHandler(todo.id)}>
+                            onClick={() => MarkAsDoneHandler(todo.id)}>
                             Marks As Done
                         </button>
 
